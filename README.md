@@ -1,12 +1,15 @@
+----------------------------------------------------------------------------------------------------------------------
 # PWA_FDR
 Basic R function to calculate FDR for Pathways analysis.
 Just used the gene list as an example, that gene list which are generted from LLMs using prompts. 
+----------------------------------------------------------------------------------------------------------------------
 #need to Load necessary libraries
 library(KEGGREST)
 library(clusterProfiler)
 library(org.Hs.eg.db)
 library(ggplot2)
-#######################################
+
+----------------------------------------------------------------------------------------------------------------------
 # Define function
 pathway_analysis <- function(gene_list, plot_bar = TRUE, plot_dot = TRUE) {
   # Convert gene symbols to Entrez IDs
@@ -38,9 +41,9 @@ pathway_analysis <- function(gene_list, plot_bar = TRUE, plot_dot = TRUE) {
   return(enrich_result@result)
 }
 
-# Example usage
+# Example
 gene_list <- c("HLA-A01:01", "CD40LG", "IL1B", "TNF", "IFNG", "CXCL9", "CXCL10", "CXCR3", "CD27", "CD154", "TNFAIP3", "CXCL10", "IL6", "IL1B", "NFKB1", "JUN", "TNF", "FASLG", "TRAF1")
 results <- pathway_analysis(gene_list)
 print(results)
-####################################################################################################################################
+----------------------------------------------------------------------------------------------------------------------
 
